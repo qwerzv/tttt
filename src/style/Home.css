@@ -1,0 +1,17 @@
+.Home {
+  background-color: #f5f7f7;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.Home_Content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Home_Sayhi h2 {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}

@@ -1,0 +1,216 @@
+.pvp-info{
+    width: 100%;
+}
+.competitive-battle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; 
+}
+
+
+.battle-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%; 
+}
+
+.gray-box {
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    border-right: 1px solid #ccc;
+}
+.test-box {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    border: 1px solid #15171c;
+}
+
+.chart-container {
+    width: 100px; /* 캔버스 너비 */
+    height: 100px; /* 캔버스 높이 */
+}
+
+#teamDeathmatchVictoryRateChart {
+    width: 100%; /* 캔버스를 부모 요소에 꽉 차게 */
+    height: 100%; /* 캔버스를 부모 요소에 꽉 차게 */
+}
+.right{
+    width:80%;
+    float : right;
+}
+.lostark-pc .profile-ingame {
+    clear: both;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    min-height: 829px;
+    padding: 40px 40px 80px;
+    background-color: #252931;
+    border: 1px solid #262a33;
+}
+
+.lostark-profile .profile-character-info {
+    position: absolute;
+    left: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.lostark-profile .profile-character-info .profile-character-info__server {
+    font-size: 18px;
+    color: #b178ff;
+}
+
+.lostark-pc .left {
+
+    flex: 0 0 248px;
+    max-width: 248px;
+    min-height: 829px;
+    background-color: #1b1e24;
+}
+
+.canvas {
+    width: 100%; 
+     height: 100%; 
+}
+.horizontal-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #363940;
+    line-height: 44px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #8089ad;
+  }
+h2 {
+    margin-right: 20px;
+}
+.lostark-pc .left .level-info {
+    margin: 0;
+    padding: 34px 14px;
+}
+.lostark-pc .left .level-info>div {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.lostark-pc .left .level-info>div span:first-of-type {
+    display: block;
+    width: 70px;
+    height: 23px;
+    margin: 0 auto 4px;
+    background-color: #15171c;
+    line-height: 23px;
+    border-radius: 12px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+.lostark-pc .left .level-info>div span:nth-of-type(2) {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+}
+.lostark-pc .left .level-info>div span:nth-of-type(2) small {
+    font-size: 14px;
+    font-weight: 400;
+}
+.lostark-pc .level-info2{
+    margin: 0;
+    padding: 34px 14px; 
+}
+.lostark-pc .left>div {
+    border-top: 1px solid #252931;
+}
+
+.lostark-pc .left .level-info2>div span:first-of-type {
+    display: block;
+    width: 120px;
+    height: 23px;
+    margin: 0 auto 4px;
+    background-color: #15171c;
+    line-height: 23px;
+    border-radius: 12px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+.lostark-pc .left .level-info2>div.level-info2__expedition span:nth-of-type(2) {
+    font-size: 31px;
+    color: #ff009b;
+}
+.lostark-pc .left .level-info2>div {
+    text-align: center;
+}
+.lostark-pc .left .level-info2>div.level-info2__item {
+    padding-top: 20px;
+}
+
+.lostark-pc .left .level-info2>div span:first-of-type {
+    display: block;
+    width: 120px;
+    height: 23px;
+    margin: 0 auto 4px;
+    background-color: #15171c;
+    line-height: 23px;
+    border-radius: 12px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+
+.lostark-pc .left .level-info2>div.level-info2__item span:nth-of-type(2) {
+    font-size: 20px;
+    color: #f7b838;
+}
+
+.lostark-pc .profile-info>div {
+    border-top: 1px solid #252931;
+}
+
+.lostark-pc .left .game-info {
+    position: relative;
+    padding: 30px 0 30px 14px;
+    box-sizing: border-box;
+}
+
+.lostark-pc .left .game-info>div {
+    height: 23px;
+    margin-bottom: 9px;
+    line-height: 23px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.lostark-pc .left .game-info>div span:first-of-type {
+    display: inline-block;
+    width: 53px;
+    margin-right: 10px;
+    background-color: #15171c;
+    border-radius: 12px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+
+
+
+
+
+
+

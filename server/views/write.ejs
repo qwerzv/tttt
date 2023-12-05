@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/write.css">
+</head>
+<body>
+    <script>
+        function displayAlt(imageId){
+        console.log(imageId);
+        let contentsInput = document.getElementById("contents");
+        document.getElementById("contents").value += "["+imageId+"]";
+         }
+    
+     </script>
+    <form name="input" method="post" class="writing-form">
+        <div class="form-group">
+            <label for="id">닉네임</label>
+            <input type="text" id="id" name="id" value="<%= id %>" maxlength="100">
+        </div>
+        <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" value="<%=password %>" maxlength="100">
+        </div>
+        <div class="form-group">
+            <label for="me">본인 직업</label>
+            <input type="text" id="me" name="me" value="<%= me %>" maxlength="100">
+        </div>
+        <div class="form-group">
+            <label for="you">상대 직업</label>
+            <input type="text" id="you" name="you" value="<%= you %>" maxlength="100">
+        </div>
+        <div class="form-group">
+            <label for="contents">내용</label>
+            <textarea id="contents" name="contents" maxlength="500"><%= savecontents %></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="글쓰기" formaction="/inputpost">
+        </div>
+    <br>
+        <button type="submit" name="job" value="도화가" formaction="/search1" >도화가</button>
+        <button type="submit" name="job" value="디스트로이어" formaction="/search1">디스트로이어</button>
+        <button type="submit" name="job" value="워로드" formaction="/search1">워로드</button>
+        <button type="submit" name="job" value="인파이터" formaction="/search1">인파이터</button>
+        <button type="submit" name="job" value="버서커" formaction="/search1">버서커</button>
+        <br>
+        
+            <%
+            for(var i=0; i<rows.length; i++)
+            {
+                var data = rows[i];
+            %>
+                <img  src= "<%=data.SkillThumb%>" alt="<%=data.SkillThumb%>" width="80" onclick="displayAlt('<%=data.SkillName%>')"/>
+                <br>
+                <span class="skill-name"><%=data.SkillName%></span>
+                <br>
+                
+            <%}
+            %>
+    </form>
+
+</body>
+</html>

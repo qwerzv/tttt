@@ -1,0 +1,33 @@
+.Notice {
+  background-color: #ffffff;
+  font-family: "Noto Sans KR";
+
+  border-radius: 6px;
+  border: 1px solid var(--base-colors-light-gray, #e4e4e7);
+  box-shadow: 0px 4px 4px 0px rgba(174, 174, 174, 0.25);
+
+  margin-bottom: 25px;
+  width: 1000px;
+  padding: 20px;
+}
+
+.Notice h2 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.Notice li {
+  list-style: none;
+  padding: 3px;
+}
+
+.Notice a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.NoticeList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

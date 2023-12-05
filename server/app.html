@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var result = prompt("비밀번호 입력","");
+        if (result=="admin") {
+            alert('확인되었습니다');
+          } else {
+            alert('틀렸습니다');
+            window.location.href = '/admin';
+          }
+    </script>
+    <form name="input" method="post" enctype="multipart/form-data">
+        직업명<input type="text" name="JobName" maxlength="10">
+        스킬명<input type="text" name="SkillName" maxlength="10">
+        스킬설명<input type="text" name="SkillEx" maxlength="100">
+        스킬 이미지(1:스킬이미지 2:스킬동영상)<input type="file" name="SkillImage" multiple/>
+        <br>
+        공격판정<input type="text" name="AttHit" maxlength="10">
+        면역판정<input type="text" name="DefHit" maxlength="10">
+        <input type="submit" value="추가" formaction="/inputdb">
+        <input type="submit" value="수정" formaction="/updatedb">
+        <input type="submit" value="삭제" formaction="/deletedb">
+
+    </form>
+    
+</body>
+</html>

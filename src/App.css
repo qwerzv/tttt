@@ -1,0 +1,86 @@
+.Home {
+  height: 100vh;
+}
+
+/* Edit */
+
+.Edit {
+  border: 1px solid gray;
+  text-align: center;
+  padding: 20px;
+}
+
+.Edit input,
+textarea {
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+.Edit input {
+  padding: 10px;
+}
+.Edit textarea {
+  padding: 10px;
+  height: 150px;
+}
+
+.Edit select {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.Edit button {
+  width: 500px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Input */
+
+.Input {
+  margin: 10px 100px;
+}
+
+.Input h1 {
+  font-size: 2.8rem;
+}
+
+.Input form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 60px;
+  width: 480px;
+  background-color: #c1ff72;
+  border-radius: 30px;
+}
+
+.Input label {
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 32px;
+}
+
+.InputSearch {
+  padding-left: 32px;
+}
+
+.InputSearch > input {
+  border: none;
+  background: none;
+  height: 20px;
+  width: 370px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.InputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+            document.addEventListener('DOMContentLoaded', function() {
+              var lastPromptTime = localStorage.getItem('lastPromptTime');
+              //비밀번호 입력 시 10분동안 다시 비밀번호 안물어봄
+              if (!lastPromptTime || (Date.now() - lastPromptTime > 10 * 60 * 1000)) {
+                var userInput = prompt('비밀번호 입력');
+                if (userInput=="admin") {
+                    localStorage.setItem('lastPromptTime', Date.now());
+                    alert('확인되었습니다');
+                  } else {
+                    alert('틀렸습니다');
+                    window.location.href = '/admin';
+                  }
+              }
+            });
+    
+    </script>
+    
+    <form name="input" method="post" enctype="multipart/form-data">
+        직업명<input type="text" value="<%= JobName11%>" name="JobName" maxlength="10">
+        스킬명<input type="text" value="<%= SkillName11%>" name="SkillName" maxlength="10">
+        스킬설명<input type="text" value="<%= SkillEx11%>" name="SkillEx"maxlength="500">
+        스킬 이미지(1:스킬이미지 2:스킬동영상)<input type="file" name="SkillImage" multiple/>
+        <br>
+        공격판정<input type="text" value="<%= AttHit11%>"name="AttHit" maxlength="10">
+        면역판정<input type="text" value="<%= DefHit11%>"name="DefHit" maxlength="10">
+        <input type="submit" value="추가" formaction="/inputdb">
+        <input type="submit" value="수정" formaction="/updatedb">
+        <input type="submit" value="삭제" formaction="/deletedb">
+
+    </form>
+    
+    <form name="search" method="post">
+        스킬 검색<input type="text" name="searchSkill" maxlength="100">
+        <input type="submit" value="검색" formaction="/searchdb">
+    </form>
+
+    
+</body>
+</html>
