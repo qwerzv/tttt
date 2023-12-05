@@ -15,7 +15,7 @@
     line-height: 1.4; 
 }
 
-/* 호버 시 툴팁 보이기 */
+
 .test1:hover ~ #toolskill1,
 .test2:hover ~ #toolskill2,
 .test3:hover ~ #toolskill3 {
@@ -46,9 +46,9 @@ button:hover{
 }
 
 .textContent textarea {
-    width: 500px; /* 원하는 너비로 조정 */
-    height: 150px; /* 원하는 높이로 조정 */
-    resize: none; /* 사용자에 의한 크기 조정 비활성화 */
+    width: 500px;
+    height: 150px; 
+    resize: none; 
 }
 button {
     padding: 12px 24px;
