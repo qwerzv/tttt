@@ -16,6 +16,9 @@
     
      </script>
     <form name="input" method="post" class="writing-form">
+        <div class = "back">
+            <button onclick="history.back()"><</button>
+        </div>
         <div class="form-group">
             <label for="id">닉네임</label>
             <input type="text" id="id" name="id" value="<%= id %>" maxlength="100">
@@ -47,18 +50,23 @@
         <button type="submit" name="job" value="버서커" formaction="/search1">버서커</button>
         <br>
         
+        <div class = "skillbox">
+
             <%
             for(var i=0; i<rows.length; i++)
             {
                 var data = rows[i];
-            %>
-                <img  src= "<%=data.SkillThumb%>" alt="<%=data.SkillThumb%>" width="80" onclick="displayAlt('<%=data.SkillName%>')"/>
-                <br>
-                <span class="skill-name"><%=data.SkillName%></span>
-                <br>
-                
-            <%}
-            %>
+                %>
+                <div class = "skill">
+                    <br>
+                    <img  src= "<%=data.SkillThumb%>" alt="<%=data.SkillThumb%>" width="80" onclick="displayAlt('<%=data.SkillName%>')"/>
+                    <br>
+                    <span class="skill-name"><%=data.SkillName%></span>
+                    <br>
+                </div>
+                <%}
+                %>
+        </div>
     </form>
 
 </body>

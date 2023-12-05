@@ -1,4 +1,4 @@
-/* Body styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -6,7 +6,7 @@ body {
     padding: 20px;
 }
 
-/* Form styles */
+
 form {
     background-color: #fff;
     padding: 20px;
@@ -24,7 +24,7 @@ form {
     max-width: 400px;
     margin: 0 auto;
 }
-/* Form container styles */
+
 .writing-form {
     background-color: #f9f9f9;
     max-width: 600px;
@@ -34,19 +34,16 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form group styles */
 .form-group {
     margin-bottom: 20px;
 }
 
-/* Label styles */
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Input and textarea styles */
 input[type="text"],
 input[type="password"],
 textarea {
@@ -153,4 +150,17 @@ img:hover {
 
 br {
     margin-bottom: 5px;
+}
+.skillbox{
+    display: flex;
+    text-align: center;
+
+}
+.skill{
+    width: 100px;
+    height: auto;
+    
+}
+.skill-name{
+    font-size: small;
 }

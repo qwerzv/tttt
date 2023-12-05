@@ -65,15 +65,15 @@
                 
                 b.id = "<%=data.Num%>";
                 b.innerHTML = a;
-                var a1 = '<img src= "<%=data.SkillThumb1%>" alt="이미지" width="50"/>' + "<%=data.SkillName1%>" +'</br>' +"<%=data.SkillEx1%>" +'</br>'+'<img src= "<%=data.SkillImg1%>" alt="이미지" width="200"/>'+'</br>';
+                var a1 = '<img src= "<%=data.SkillThumb1%>" alt="이미지" width="50"/>' + '<div style = "text-align: center;">' + "<%=data.SkillName1 %>" + '</br>' +'</div>'+ '<hr>' +"<%=data.SkillEx1%>" +'</br>'+'<img src= "<%=data.SkillImg1%>" alt="이미지" width="200"/>'+'</br>';
                 tip1 =  document.createElement('span');
                 tip1.id = "toolskill1";
                 tip1.innerHTML = a1;
-                var a2 = '<img src= "<%=data.SkillThumb2%>" alt="이미지" width="50"/>' + "<%=data.SkillName2%>" +'</br>' +"<%=data.SkillEx2%>" +'</br>'+'<img src= "<%=data.SkillImg2%>" alt="이미지" width="200"/>'+'</br>';
+                var a2 = '<img src= "<%=data.SkillThumb2%>" alt="이미지" width="50"/>' + '<div style = "text-align: center;">' +  "<%=data.SkillName2%>" +'</br>' +'</div>'+ '<hr>'+"<%=data.SkillEx2%>" +'</br>'+'<img src= "<%=data.SkillImg2%>" alt="이미지" width="200"/>'+'</br>';
                 tip2 =  document.createElement('span');
                 tip2.id = "toolskill2";
                 tip2.innerHTML = a2;
-                var a3 = '<img src= "<%=data.SkillThumb3%>" alt="이미지" width="50"/>' + "<%=data.SkillName3%>" +'</br>' +"<%=data.SkillEx3%>" +'</br>'+'<img src= "<%=data.SkillImg3%>" alt="이미지" width="200"/>'+'</br>';
+                var a3 = '<img src= "<%=data.SkillThumb3%>" alt="이미지" width="50"/>' + '<div style = "text-align: center;">' + "<%=data.SkillName3%>"+'</div>'+ '<hr>' +'</br>' +"<%=data.SkillEx3%>" +'</br>'+'<img src= "<%=data.SkillImg3%>" alt="이미지" width="200"/>' + '</br>';
                 tip3 =  document.createElement('span');
                 tip3.id = "toolskill3";
                 tip3.innerHTML = a3;
@@ -88,7 +88,7 @@
                 c.setAttribute("name", "aa")
                 c.innerHTML ="X";
                 c.addEventListener('click', function() {
-                    var result = prompt('확인하시겠습니까?',"");
+                    var result = prompt('비밀번호를 입력하세요',"");
                     if (result=="<%=data.password%>") {
                         alert('확인되었습니다');
                         c.setAttribute("formaction","/tt");

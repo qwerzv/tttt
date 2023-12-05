@@ -117,7 +117,7 @@ const CharacterPage = () => {
         },
       };
 
-      // Render the chart
+
       const ctx = canvas.getContext("2d");
       window.deathmatchChart = new Chart(ctx, {
         type: "doughnut",
@@ -125,7 +125,7 @@ const CharacterPage = () => {
         options: options,
       });
 
-      canvas.style.display = "block"; // Ensure canvas display is on if previously hidden
+      canvas.style.display = "block"; 
     } else {
       canvas.style.display = "none";
       canvas.insertAdjacentHTML(

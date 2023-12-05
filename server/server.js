@@ -173,25 +173,6 @@ app.post('/inputpost',function(req,res){
     res.redirect("/post");
     
 })
-app.post('/inputpost1',function(req,res){
-    let sent = req.body.contents;
-    let regex = /\[(.*?)\]/g;
-    let ex;
-    while((ex=regex.exec(sent))!==null){
-        result.push(ex[1]);
-    }
-    
-    let sql = 'insert into post (id,password,Contents,Me,You,SkillName1,SkillName2,SkillName3) values (?,?,?,?,?,?,?,?)';
-    let param = [req.body.id,req.body.password,req.body.contents,postme,postyou,result[0],result[1],result[2]];
-    connection.query(sql,param,function(err){
-        if(err){
-            console.log(err);
-        }
-    })
- result = [];
-    res.redirect("/post");
-    
-})
 
 
 let savecontents, id , password, me, you = ""
@@ -200,7 +181,7 @@ app.get('/write',function(req,res,next){
     var param = jobname1;
     connection.query(sql,[param],function(err,rows){
             if(err) console.error;
-            res.render("write",{rows:rows,savecontents:savecontents,id:id,password:password,me:me,you:you});
+            res.render("write",{rows:rows,savecontents:savecontents,id:id,password:password,me:postme,you:postyou});
          })
  
 
