@@ -1,0 +1,29 @@
+.HeaderComponent {
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid var(--base-colors-light-gray, #e4e4e7);
+  height: 80px;
+  margin-bottom: 50px;
+}
+
+.HeaderComponent a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.HeaderContainer span {
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+.HeaderNav {
+  display: flex;
+  gap: 25px;
+}

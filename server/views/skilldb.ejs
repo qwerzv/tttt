@@ -1,67 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/post.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/post.css" />
+    <link rel="stylesheet" href="/header.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="HeaderComponent">
+      <div class="HeaderContainer">
+        <span>
+          <a href="http://localhost:3001/">로코코</a>
+        </span>
+        <nav class="HeaderNav">
+          <a href="http://localhost:3000/post">가이드</a>
+          <a href="http://localhost:3000/skilldb">스킬DB</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main -->
     <form name="input" method="post">
-        <!-- 직업명<input type="text" name="JobName" maxlength="10">
+      <!-- 직업명<input type="text" name="JobName" maxlength="10">
         <input type="submit" value="검색" formaction="/search">   -->
-        <button type="submit" class = "me" name="job" value="건슬링어" formaction="/search">건슬링어</button>
-        <button type="submit" class = "me" name="job" value="기공사" formaction="/search">기공사</button>
-        <button type="submit" class = "me" name="job" value="기상술사" formaction="/search">기상술사</button>
-        <button type="submit" class = "me" name="job" value="데모닉" formaction="/search">데모닉</button>
-        <button type="submit" class = "me" name="job" value="데빌헌터" formaction="/search">데빌헌터</button>
-        <button type="submit" class = "me" name="job" value="도화가" formaction="/search">도화가</button>
-        <button type="submit" class = "me" name="job" value="디스트로이어" formaction="/search">디스트로이어</button>
-        <button type="submit" class = "me" name="job" value="워로드" formaction="/search">워로드</button>
-        <button type="submit" class = "me" name="job" value="인파이터" formaction="/search">인파이터</button>
-        <button type="submit" class = "me" name="job" value="버서커" formaction="/search">버서커</button>
-        <button type="submit" class = "me" name="job" value="리퍼" formaction="/search">리퍼</button>
-    
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="건슬링어"
+        formaction="/search"
+      >
+        건슬링어
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="기공사"
+        formaction="/search"
+      >
+        기공사
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="기상술사"
+        formaction="/search"
+      >
+        기상술사
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="데모닉"
+        formaction="/search"
+      >
+        데모닉
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="데빌헌터"
+        formaction="/search"
+      >
+        데빌헌터
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="도화가"
+        formaction="/search"
+      >
+        도화가
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="디스트로이어"
+        formaction="/search"
+      >
+        디스트로이어
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="워로드"
+        formaction="/search"
+      >
+        워로드
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="인파이터"
+        formaction="/search"
+      >
+        인파이터
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="버서커"
+        formaction="/search"
+      >
+        버서커
+      </button>
+      <button
+        type="submit"
+        class="me"
+        name="job"
+        value="리퍼"
+        formaction="/search"
+      >
+        리퍼
+      </button>
     </form>
 
-
     <ul class="skill-list">
-        <% for(var i = 0; i < rows.length; i++) { %>
-            <li>
-                <div class="skill-info">
-                    <img src="<%=rows[i].SkillThumb%>" alt="이미지" />
-                    <h3><%=rows[i].SkillName%></h3>
-                </div>
-                <hr class="divider"> <!-- 가로 선 추가 -->
-                <p><%=rows[i].SkillEx%></p>
-                <img src="<%=rows[i].SkillImg%>" alt="이미지" width="327" height="257"/>
-            </li>
-        <% } %>
+      <% for(var i = 0; i < rows.length; i++) { %>
+      <li>
+        <div class="skill-info">
+          <img src="<%=rows[i].SkillThumb%>" alt="이미지" />
+          <h3><%=rows[i].SkillName%></h3>
+        </div>
+        <hr class="divider" />
+        <!-- 가로 선 추가 -->
+        <p><%=rows[i].SkillEx%></p>
+        <img
+          src="<%=rows[i].SkillImg%>"
+          alt="이미지"
+          width="327"
+          height="257"
+        />
+      </li>
+      <% } %>
     </ul>
     <script>
-        // var meButtons = document.getElementsByClassName("me");
-        // for (var i = 0; i < meButtons.length; i++) {
-        //     if (meButtons[i].value === "<%=postme%>") {
-        //         meButtons[i].style.backgroundColor = "red";
-        //     }
-        // }
-        
-        var skillDescriptions = document.querySelectorAll('.skill-list p');
+      // var meButtons = document.getElementsByClassName("me");
+      // for (var i = 0; i < meButtons.length; i++) {
+      //     if (meButtons[i].value === "<%=postme%>") {
+      //         meButtons[i].style.backgroundColor = "red";
+      //     }
+      // }
 
-        skillDescriptions.forEach(function(skillDescription) {
-            var text = skillDescription.innerHTML;
-            var replacedText = text.replace(/(\d+%?m?)/g, function(match) {
-                if (match.endsWith('m')) {
-                    return '<span class="unit">' + match + '</span>';
-                } else if (match.endsWith('%')) {
-                    return '<span class="percent">' + match + '</span>';
-                } else {
-                    return '<span class="number">' + match + '</span>';
-                }
-            });
-            skillDescription.innerHTML = replacedText;
+      var skillDescriptions = document.querySelectorAll(".skill-list p");
+
+      skillDescriptions.forEach(function (skillDescription) {
+        var text = skillDescription.innerHTML;
+        var replacedText = text.replace(/(\d+%?m?)/g, function (match) {
+          if (match.endsWith("m")) {
+            return '<span class="unit">' + match + "</span>";
+          } else if (match.endsWith("%")) {
+            return '<span class="percent">' + match + "</span>";
+          } else {
+            return '<span class="number">' + match + "</span>";
+          }
         });
+        skillDescription.innerHTML = replacedText;
+      });
     </script>
-
-</body>
+  </body>
 </html>
