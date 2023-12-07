@@ -1,146 +1,150 @@
+body {
+  margin: 0;
+  background-color: #f5f7f7;
+}
+
 #toolskill1,
 #toolskill2,
 #toolskill3 {
-    display: none;
-    position: absolute;
-    max-width: 200px;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 14px;
-    color: #333; 
-    background-color: #f5f5f5; 
-    z-index: 1;
-    padding: 5px 8px;
-    line-height: 1.4; 
+  display: none;
+  position: absolute;
+  max-width: 200px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  z-index: 1;
+  padding: 5px 8px;
+  line-height: 1.4;
 }
 
 .test1:hover ~ #toolskill1,
 .test2:hover ~ #toolskill2,
 .test3:hover ~ #toolskill3 {
-    display: block;
+  display: block;
 }
 
-.my{
-    text-align: center;
+.my {
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .community {
-    display: flex;
-    align-self: center;
-    text-align: center;
+  display: flex;
+  align-self: center;
+  text-align: center;
 }
 
-.pongpong{
-    display: flex;
-    flex-direction: column;
+.pongpong {
+  display: flex;
+  flex-direction: column;
 }
-button:hover{
-    background-color: lightgray;
+button:hover {
+  background-color: lightgray;
 }
 
 .textContent textarea {
     width: 500px; 
     height: 150px;
-    resize: none; 
+    resize: none;
 }
 button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 5px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 5px;
 }
 
 button:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
+  background-color: #45a049;
+  transform: translateY(-2px);
 }
 
 .container > div {
-    margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 #tagArea {
-    border: 1px solid #ccc;
-    height: 300px; 
-    width: 550px;
-    padding: 10px; 
-    border-radius: 5px; 
-    background-color: #f7f7f7;
-    overflow-y: auto; 
-    margin-right: 5px;
+  border: 1px solid #ccc;
+  height: 300px;
+  width: 550px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  overflow-y: auto;
+  margin-right: 5px;
 }
 #tagArea > div + div {
-    border-top: 1px solid #ccc; 
-    padding-top: 10px; 
-    margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
 }
 button:active {
-    background-color: #4CAF50;
-    color: white; 
-    border: 2px solid #4CAF50; 
+  background-color: #4caf50;
+  color: white;
+  border: 2px solid #4caf50;
 }
 button[name="aa"] {
-    padding: 5px 8px; 
-    font-size: 0.8em; 
+  padding: 5px 8px;
+  font-size: 0.8em;
 }
 .selected-button {
-    background-color: lightblue;
+  background-color: lightblue;
 }
 ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 li {
-    width: 330px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+  width: 330px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .skill-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .skill-info img {
-    max-width: 50px;
-    height: auto;
-    margin-right: 10px;
+  max-width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 .divider {
-    width: 100%; 
-    border: none;     
-    border-top: 1px solid #ccc; 
-    margin: 10px 0; 
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
 }
 .number {
-    color: blue; 
+  color: blue;
 }
 .unit {
-    color: red; 
+  color: red;
 }
-.percent{
-    color: green;
+.percent {
+  color: green;
 }

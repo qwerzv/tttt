@@ -1,49 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/admin.css" />
+    <link rel="stylesheet" href="/header.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        
-            document.addEventListener('DOMContentLoaded', function() {
-              var lastPromptTime = localStorage.getItem('lastPromptTime');
-              //비밀번호 입력 시 10분동안 다시 비밀번호 안물어봄
-              if (!lastPromptTime || (Date.now() - lastPromptTime > 10 * 60 * 1000)) {
-                var userInput = prompt('비밀번호 입력');
-                if (userInput=="admin") {
-                    localStorage.setItem('lastPromptTime', Date.now());
-                    alert('확인되었습니다');
-                  } else {
-                    alert('틀렸습니다');
-                    window.location.href = '/admin';
-                  }
-              }
-            });
-    
+      document.addEventListener("DOMContentLoaded", function () {
+        var lastPromptTime = localStorage.getItem("lastPromptTime");
+        //비밀번호 입력 시 10분동안 다시 비밀번호 안물어봄
+        if (!lastPromptTime || Date.now() - lastPromptTime > 10 * 60 * 1000) {
+          var userInput = prompt("비밀번호 입력");
+          if (userInput == "admin") {
+            localStorage.setItem("lastPromptTime", Date.now());
+            alert("확인되었습니다");
+          } else {
+            alert("틀렸습니다");
+            window.location.href = "/admin";
+          }
+        }
+      });
     </script>
-    
-    <form name="input" method="post" enctype="multipart/form-data">
-        직업명<input type="text" value="<%= JobName11%>" name="JobName" maxlength="10">
-        스킬명<input type="text" value="<%= SkillName11%>" name="SkillName" maxlength="10">
-        스킬설명<input type="text" value="<%= SkillEx11%>" name="SkillEx"maxlength="500">
-        스킬 이미지(1:스킬이미지 2:스킬동영상)<input type="file" name="SkillImage" multiple/>
-        <br>
-        공격판정<input type="text" value="<%= AttHit11%>"name="AttHit" maxlength="10">
-        면역판정<input type="text" value="<%= DefHit11%>"name="DefHit" maxlength="10">
-        <input type="submit" value="추가" formaction="/inputdb">
-        <input type="submit" value="수정" formaction="/updatedb">
-        <input type="submit" value="삭제" formaction="/deletedb">
+    <!-- 이게 있어야해 -->
+    <!-- header -->
+    <header class="HeaderComponent">
+      <div class="HeaderContainer">
+        <span>
+          <a href="http://localhost:3001/">로코코</a>
+        </span>
+        <nav class="HeaderNav">
+          <a href="http://localhost:3000/post">가이드</a>
+          <a href="http://localhost:3000/skilldb">스킬DB</a>
+        </nav>
+      </div>
+    </header>
 
-    </form>
-    
+    <!-- main -->
     <form name="search" method="post">
-        스킬 검색<input type="text" name="searchSkill" maxlength="100">
-        <input type="submit" value="검색" formaction="/searchdb">
+      스킬 검색<input type="text" name="searchSkill" maxlength="100" />
+      <input type="submit" value="검색" formaction="/searchdb" />
     </form>
 
-    
-</body>
+    <hr />
+
+    <form name="input" method="post" enctype="multipart/form-data">
+      <div class="formContainer">
+        <div class="formFirst">
+          <p>직업명</p>
+          <input
+            type="text"
+            value="<%= JobName11%>"
+            name="JobName"
+            maxlength="10"
+          />
+          <p>스킬명</p>
+          <input
+            type="text"
+            value="<%= SkillName11%>"
+            name="SkillName"
+            maxlength="10"
+          />
+        </div>
+        <div class="formSec">
+          <p>스킬설명</p>
+          <input
+            type="text"
+            value="<%= SkillEx11%>"
+            name="SkillEx"
+            maxlength="500"
+          />
+          <!-- <textarea value="<%= SkillEx11%>" maxlength="500"></textarea> -->
+        </div>
+
+        <div class="formThird">
+          <p>공격판정</p>
+          <input
+            type="text"
+            value="<%= AttHit11%>"
+            name="AttHit"
+            maxlength="10"
+          />
+          <p>면역판정</p>
+          <input
+            type="text"
+            value="<%= DefHit11%>"
+            name="DefHit"
+            maxlength="10"
+          />
+        </div>
+        <div class="formFour">
+          <p>스킬 이미지(1:스킬이미지 2:스킬동영상)</p>
+          <input type="file" name="SkillImage" multiple />
+        </div>
+      </div>
+
+      <hr />
+
+      <input type="submit" value="추가" formaction="/inputdb" />
+      <input type="submit" value="수정" formaction="/updatedb" />
+      <input type="submit" value="삭제" formaction="/deletedb" />
+    </form>
+  </body>
 </html>
