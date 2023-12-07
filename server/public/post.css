@@ -50,9 +50,9 @@ button:hover {
 }
 
 .textContent textarea {
-  width: 500px;
-  height: 150px;
-  resize: none;
+    width: 500px; 
+    height: 150px;
+    resize: none;
 }
 button {
   padding: 12px 24px;
