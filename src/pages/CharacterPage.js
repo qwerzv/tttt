@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../style/CharacterPage.css";
 import Chart from "chart.js/auto";
+import HeaderComponent from "../component/HeaderComponent";
+import FooterComponent from "../component/FooterComponent";
 
 const API_KEY =
   "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyIsImtpZCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyJ9.eyJpc3MiOiJodHRwczovL2x1ZHkuZ2FtZS5vbnN0b3ZlLmNvbSIsImF1ZCI6Imh0dHBzOi8vbHVkeS5nYW1lLm9uc3RvdmUuY29tL3Jlc291cmNlcyIsImNsaWVudF9pZCI6IjEwMDAwMDAwMDAzMjM3MzQifQ.cOxA0cajp7aTwULOwevlYQo83M33p4v6l2Q0HQDggo7PZ7LE0_njBcTWwN_8ss0aMdZ7GNmUbkV4c2c60WQECCZwKmd-c8kmUa108DYANuRVGQ81recNKUZYBLgMVbLWmUyWTWWpW5HuM4ekEk0YI1B6-OHhPEYgxOjteAGwOP2bSK2w2tuiby4KWZyCmWzvMpbVun36psuIWNXKvNkzwIz8uUEa8wOwV8Av5-iXWn_3OXhm6Qzly--DTZu4REftxL9sp4_7RwZ_7dX7NXleB-YlvV9BEqlX17w52LegDz_iRRUmd2BFwoVAOs76Y864xfh0NtruCT4yB9wfz5z2Qw";
@@ -91,11 +93,9 @@ const CharacterPage = () => {
     if (selectedSeason && selectedSeason.Deathmatch) {
       const deathmatchData = selectedSeason.Deathmatch;
 
-      // Calculate the victory rate or other required data for the chart
       const victoryRate =
         (deathmatchData.VictoryCount / deathmatchData.PlayCount) * 100;
 
-      // Create the chart data and options
       const data = {
         labels: ["Victory", "Loss"],
         datasets: [
@@ -153,11 +153,11 @@ const CharacterPage = () => {
     if (selectedSeason && selectedSeason.TeamElimination) {
       const eliminationData = selectedSeason.TeamElimination;
 
-      // Calculate the victory rate or other required data for the chart
+
       const victoryRate =
         (eliminationData.VictoryCount / eliminationData.PlayCount) * 100;
 
-      // Create the chart data and options
+
       const data = {
         labels: ["Victory", "Loss"],
         datasets: [
@@ -179,7 +179,7 @@ const CharacterPage = () => {
         },
       };
 
-      // Render the chart
+
       const ctx = canvas.getContext("2d");
       window.myChart = new Chart(ctx, {
         type: "doughnut",
@@ -187,7 +187,7 @@ const CharacterPage = () => {
         options: options,
       });
 
-      canvas.style.display = "block"; // Ensure canvas display is on if previously hidden
+      canvas.style.display = "block"; 
     } else {
       canvas.style.display = "none";
       canvas.insertAdjacentHTML(
@@ -262,7 +262,9 @@ const CharacterPage = () => {
   // }
 
   return (
+    
     <div class="lostark-pc lostark-profile">
+      <HeaderComponent/>
       {loaApiResponse ? (
         <div class="profile-ingame">
           <div class="profile-character-info">
@@ -273,11 +275,24 @@ const CharacterPage = () => {
             </span>
           </div>
           <div class="left">
-            <img
-              src={loaApiResponse.ArmoryProfile.CharacterImage}
-              alt="Character Image"
-              style={{ maxWidth: "235px", maxHeight: "270px" }}
-            />
+          <div class="testtest">
+  <div class="image-wrapper">
+    <img src={loaApiResponse.ArmoryProfile.CharacterImage} alt="Character Image" />
+  </div>
+  <div class="gray-background"></div>
+</div>
+            
+            {/* <div class = "testtest">
+              <img
+                src={loaApiResponse.ArmoryProfile.CharacterImage}
+                alt="Character Image"
+                style={{
+                  maxWidth: "350px",
+                  // maxHeight: "270px",
+                  // WebkitMaskImage: "linear-gradient(100deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0) 70%)",
+                }}
+              />
+            </div> */}
             <div class="level-info">
               <div class="level-info__expedition">
                 <span>원정대 레벨</span>
@@ -328,12 +343,13 @@ const CharacterPage = () => {
                 <span>{loaApiResponse.ArmoryProfile.PvpGradeName}</span>
               </div>
               <div class="game-info__wisdom">
-                <p>영지</p>
-                <p>Lv.{loaApiResponse.ArmoryProfile.TownLevel}</p>
-                <p>{loaApiResponse.ArmoryProfile.TownName}</p>
+                <span>영지</span>
+                <span><small>Lv.</small>{loaApiResponse.ArmoryProfile.TownLevel + " "}</span>
+                <span>{loaApiResponse.ArmoryProfile.TownName}</span>
               </div>
             </div>
           </div>
+
           <div class="right">
             <div className="gray-box">
               <div className="box-section">
@@ -364,7 +380,7 @@ const CharacterPage = () => {
                       <div>
                         <div className="pvp-info">
                           {/* 경쟁전 */}
-                          <div>경쟁전</div>
+                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>경쟁전</div>
                           <div className="battle-info">
                             <div class="test-box">
                               {selectedSeason.Competitive &&
@@ -414,7 +430,7 @@ const CharacterPage = () => {
                             </div>
                           </div>
                           {/* 섬멸전 */}
-                          <div>섬멸전</div>
+                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>섬멸전</div>
                           <div className="battle-info">
                             <div class="test-box">
                               <canvas id="teamDeathmatchVictoryRateChart"></canvas>
@@ -470,7 +486,7 @@ const CharacterPage = () => {
                             </div>
                           </div>
                           {/* 난투전 */}
-                          <div>난투전</div>
+                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>난투전</div>
                           <div className="battle-info">
                             <div class="test-box">
                               <div style={{ position: "relative" }}>
@@ -532,7 +548,7 @@ const CharacterPage = () => {
                             </div>
                           </div>
                           {/* 대장전 */}
-                          <div>대장전</div>
+                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>대장전</div>
                           <div className="battle-info">
                             <div class="test-box">
                               <canvas id="victoryRateChart"></canvas>
@@ -607,12 +623,14 @@ const CharacterPage = () => {
                           </div>
                         </div>
                       </div>
+                      
                     ) : null}
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <FooterComponent/>
         </div>
       ) : (
         <div>안되는 이유를 찾아라 닝겐아..</div>
