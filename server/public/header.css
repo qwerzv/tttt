@@ -1,6 +1,9 @@
 .HeaderComponent {
+  display: flex;
   background-color: #ffffff;
   border: 1px solid var(--base-colors-light-gray, #e4e4e7);
+  height: 80px;
+  margin-bottom: 50px;
 }
 
 .HeaderComponent a {
@@ -10,9 +13,9 @@
 
 .HeaderContainer {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-left: 150px;
-  margin-right: 150px;
 }
 
 .HeaderContainer span {
