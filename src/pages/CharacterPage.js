@@ -329,7 +329,7 @@ const CharacterPage = () => {
               </div>
               <div class="game-info__wisdom">
                 <p>영지</p>
-                <p>Lv.{loaApiResponse.ArmoryProfile.TownLevel}</p>
+                <p>Lv.{loaApiResponse.ArmoryProfile.TownLevel + " "}</p>
                 <p>{loaApiResponse.ArmoryProfile.TownName}</p>
               </div>
             </div>
