@@ -64,12 +64,10 @@
 
 .lostark-profile .profile-character-info {
   position: absolute;
-  left: 185px;
   color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   z-index: 4;
-  margin-top: 25px;
 }
 
 .lostark-profile .profile-character-info .profile-character-info__server {
@@ -138,9 +136,6 @@ h2 {
 .lostark-pc .level-info2 {
   margin: 0;
   padding: 34px 14px;
-}
-.lostark-pc .left > div {
-  border-top: 1px solid #252931;
 }
 
 .lostark-pc .left .level-info2 > div span:first-of-type {
@@ -266,6 +261,8 @@ h2 {
   overflow: hidden;
   display: flex;
   position: relative;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .testtest .image-wrapper {
@@ -335,4 +332,3 @@ h2 {
 .testtest .image-wrapper {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-
