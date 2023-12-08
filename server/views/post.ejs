@@ -54,7 +54,7 @@
             %>
         
             <script>
-                var a = "<%=data.id%>"+"<br>    "+"<%=data.Contents%>";
+                var a = "작성자: "+"<strong>"+"<%=data.id%>"+"</strong>"+"<br>    "+"<%=data.Contents%>";
                 if("<%=data.SkillName1%>"){
                     a = a.replace(new RegExp("<%=data.SkillName1%>", "g"), "<span class='test1'>" + "<%=data.SkillName1%>" + "</span>");
                     if("<%=data.SkillName2%>"){
