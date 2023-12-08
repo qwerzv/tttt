@@ -51,12 +51,6 @@ const FooterComponent = () => {
         <h2>도전 가디언 토벌</h2>
       </div>
       <div className="GuardianList">
-        {/* {guardian.map((raid, index) => (
-          <li key={index} style={{ listStyle: "none" }}>
-            <img src={raid.Image} alt="#"></img>
-            {raid.Name}
-          </li>
-        ))} */}
         <ul>
           {guardian.map((raid, index) => (
             <li key={index} style={{ listStyle: "none", position: "relative" }}>
@@ -85,7 +79,14 @@ const FooterComponent = () => {
                 alt="#"
                 style={{ width: "250px", height: "100px" }}
               ></img>
-              <span style={{ position: "absolute", top: "0", left: "0" }}>
+              <span
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  color: "#ffffff",
+                }}
+              >
                 {aby.Name}
               </span>
             </li>

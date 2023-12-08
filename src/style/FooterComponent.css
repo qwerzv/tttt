@@ -1,6 +1,7 @@
 .FooterComponent {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   background-color: #ffffff;
@@ -11,6 +12,17 @@
   height: 800px;
 }
 
+.FooterComponent img {
+  border-radius: 6px;
+}
+
 .FooterComponent h2 {
   margin: 0px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0px;
 }
