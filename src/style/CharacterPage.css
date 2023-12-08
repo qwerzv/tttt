@@ -50,6 +50,7 @@
   float: right;
   margin-right: 25px;
   margin-left: 10px;
+  margin-top: 25px;
 }
 .lostark-pc .profile-ingame {
   clear: both;
@@ -58,7 +59,7 @@
   min-height: 829px;
   padding: 10px 40px;
   background-color: #f5f7f7;
-  justify-content: center;
+  justify-content : center;
 }
 
 .lostark-profile .profile-character-info {
@@ -68,6 +69,7 @@
   font-size: 16px;
   font-weight: 700;
   z-index: 4;
+  margin-top: 25px;
 }
 
 .lostark-profile .profile-character-info .profile-character-info__server {
@@ -80,6 +82,8 @@
   max-width: 248px;
   min-height: 829px;
   background-color: #1b1e24;
+  margin-top: 25px;
+  border-radius: 6px;
 }
 
 .canvas {
@@ -212,15 +216,11 @@ h2 {
   color: #666;
   font-size: 13px;
 }
-.lostark-pc .profile-info .game-info > div.game-info__wisdom {
+.lostark-pc .profile-info .game-info>div.game-info__wisdom {
   display: block;
   height: auto;
 }
-.lostark-pc
-  .profile-info
-  .game-info
-  > div.game-info__wisdom
-  span:first-of-type {
+.lostark-pc .profile-info .game-info>div.game-info__wisdom span:first-of-type {
   float: left;
   width: 53px;
   padding: 15px 0;
@@ -232,13 +232,13 @@ h2 {
   font-size: 13px;
   font-weight: 400;
 }
-.lostark-pc .profile-info .game-info > div.game-info__wisdom span {
+.lostark-pc .profile-info .game-info>div.game-info__wisdom span {
   display: block;
   overflow: hidden;
   font-size: 22px;
   font-weight: 700;
 }
-.lostark-pc .profile-info .game-info > div.game-info__wisdom span:last-child {
+.lostark-pc .profile-info .game-info>div.game-info__wisdom span:last-child {
   margin-top: 5px;
   font-size: 14px;
   font-weight: 400;
@@ -279,20 +279,60 @@ h2 {
 }
 
 .testtest .image-wrapper::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   width: 85%;
   height: 100%;
-  background: linear-gradient(to left, rgba(204, 204, 204, 0) 0%, #ccc 100%);
+  background: linear-gradient(to left, rgba(204, 204, 204, 0) 0%, #ccc 100%); 
   z-index: 1;
 }
 
 .testtest .gray-background {
   flex: 1;
-  background-color: #ccc;
+  background-color: #ccc; 
 }
+
 
 .testtest .image-wrapper {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+
+.testtest {
+  width: 248px;
+  height: 270px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.testtest .image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.testtest .image-wrapper img {
+  width: 355px;
+  display: block;
+}
+
+.testtest .image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 85%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(204, 204, 204, 0) 0%, #ccc 100%); 
+  z-index: 1;
+}
+
+.testtest .gray-background {
+  flex: 1;
+  background-color: #ccc; 
+}
+
+
+.testtest .image-wrapper {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
