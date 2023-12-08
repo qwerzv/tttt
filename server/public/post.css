@@ -3,6 +3,12 @@ body {
   background-color: #f5f7f7;
 }
 
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 #toolskill1,
 #toolskill2,
 #toolskill3 {
@@ -30,30 +36,43 @@ body {
   text-align: center;
 }
 
-.container {
+.myJob {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.community {
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* .community {
   display: flex;
   align-self: center;
   text-align: center;
-}
+} */
 
 .pongpong {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 button:hover {
   background-color: lightgray;
 }
 
 .textContent textarea {
-    width: 500px; 
-    height: 150px;
-    resize: none;
+  width: 500px;
+  height: 150px;
+  resize: none;
 }
+
 button {
   padding: 12px 24px;
   border: none;
@@ -66,6 +85,10 @@ button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 5px;
+}
+
+.test11 {
+  margin-left: 10px;
 }
 
 button:hover {
@@ -122,6 +145,11 @@ li {
   margin-right: 10px;
 }
 
+.skill-list {
+  display: flex;
+  justify-content: center;
+}
+
 .skill-info {
   display: flex;
   align-items: center;
@@ -147,4 +175,17 @@ li {
 }
 .percent {
   color: green;
+}
+
+.jobSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid var(--base-colors-light-gray, #e4e4e7);
+  width: 300px;
+  height: 400px;
 }

@@ -24,16 +24,6 @@
 
     <!-- main -->
     <div class = "container">
-        <div class = "my">
-            <form id="input" method="post">
-                내 직업
-                <button type="submit" class = "me" name="me" value="리퍼" formaction="/postsearch">리퍼</button>
-                <button type="submit" class = "me" name="me" value="인파이터" formaction="/postsearch">인파이터</button>
-                <button type="submit" class = "me" name="me" value="워로드" formaction="/postsearch">워로드</button>
-                <button type="submit" class = "me" name="me" value="디스트로이어" formaction="/postsearch">디스트로이어</button>
-                <button type="submit" class = "me" name="me" value="버서커" formaction="/postsearch">버서커</button>
-            </form>
-        </div>
         <div class = "community">
             <div class = "textarea">
                 <form name="input1"  method="post" >
@@ -64,7 +54,7 @@
             %>
         
             <script>
-                var a = "작성자:  "+"<%=data.id%>"+"<br>    "+"<%=data.Contents%>";
+                var a = "<%=data.id%>"+"<br>    "+"<%=data.Contents%>";
                 if("<%=data.SkillName1%>"){
                     a = a.replace(new RegExp("<%=data.SkillName1%>", "g"), "<span class='test1'>" + "<%=data.SkillName1%>" + "</span>");
                     if("<%=data.SkillName2%>"){
@@ -99,19 +89,23 @@
                 b.appendChild(tip2);
                 b.appendChild(tip3);
                 
-                c.setAttribute("value","<%=data.Num%>");
-                c.setAttribute("name", "aa")
-                c.innerHTML ="X";
-                c.addEventListener('click', function() {
-                    var result = prompt('비밀번호를 입력하세요',"");
-                    if (result=="<%=data.password%>") {
-                        alert('확인되었습니다');
-                        c.setAttribute("formaction","/tt");
-                    } else {
-                        alert('틀렸습니다');
-                        c.setAttribute("formaction","/tt1");
-                    }
-                });
+                (function (currentC) {
+                    c.setAttribute("value", "<%=data.Num%>");
+                    c.setAttribute("name", "aa");
+                    c.innerHTML = "X";
+                    c.type = "submit";
+                    c.setAttribute("class", "test11");
+                    c.addEventListener('click', function () {
+                        var result = prompt('비밀번호를 입력하세요', "");
+                        if (result == "<%=data.password%>") {
+                            alert('확인되었습니다');
+                            currentC.setAttribute("formaction", "/tt");
+                        } else {
+                            alert('틀렸습니다');
+                            currentC.setAttribute("formaction", "/tt1");
+                        }
+                    });
+                })(c); 
                 b.appendChild(c);
                 
                 </script>
@@ -119,19 +113,33 @@
             
             <%}
             %>
+        </div>
+        <div class="jobSelector">
+        <!-- 내 직업 -->
+            <div class = "my">
+                <form id="input" method="post" class="myJob">
+                    <span>내 직업</span>
+                    <button type="submit" class = "me" name="me" value="리퍼" formaction="/postsearch">리퍼</button>
+                    <button type="submit" class = "me" name="me" value="인파이터" formaction="/postsearch">인파이터</button>
+                    <button type="submit" class = "me" name="me" value="워로드" formaction="/postsearch">워로드</button>
+                    <button type="submit" class = "me" name="me" value="디스트로이어" formaction="/postsearch">디스트로이어</button>
+                    <button type="submit" class = "me" name="me" value="버서커" formaction="/postsearch">버서커</button>
+                </form>
+            </div>
+        <!-- 상대 직업 -->
             <div class = "opp">
                 <form name="input" method="post">
                     <div class = "pongpong">
-                    상대 직업
-                    <button type="submit" class = "you" name="you" value="리퍼" formaction="/postsearch1">리퍼</button>
-                    <button type="submit" class = "you" name="you" value="인파이터" formaction="/postsearch1">인파이터</button>
-                    <button type="submit" class = "you" name="you" value="워로드" formaction="/postsearch1">워로드</button>
-                    <button type="submit" class = "you" name="you" value="디스트로이어" formaction="/postsearch1">디스트로이어</button>
-                    <button type="submit" class = "you" name="you" value="버서커" formaction="/postsearch1">버서커</button>
-                </div>
-            </form>
+                        <span>상대 직업</span>
+                        <button type="submit" class = "you" name="you" value="리퍼" formaction="/postsearch1">리퍼</button>
+                        <button type="submit" class = "you" name="you" value="인파이터" formaction="/postsearch1">인파이터</button>
+                        <button type="submit" class = "you" name="you" value="워로드" formaction="/postsearch1">워로드</button>
+                        <button type="submit" class = "you" name="you" value="디스트로이어" formaction="/postsearch1">디스트로이어</button>
+                        <button type="submit" class = "you" name="you" value="버서커" formaction="/postsearch1">버서커</button>
+                    </div>
+                </form>
             </div>
-    </div>
+        </div>
     </div>
             <script>
                 var meButtons = document.getElementsByClassName("me");
