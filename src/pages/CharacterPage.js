@@ -267,20 +267,20 @@ const CharacterPage = () => {
       <HeaderComponent/>
       {loaApiResponse ? (
         <div class="profile-ingame">
-          <div class="profile-character-info">
-            [Lv.{loaApiResponse.ArmoryProfile.CharacterLevel}{" "}
-            {loaApiResponse.ArmoryProfile.CharacterName}]{" "}
-            <span class="profile-character-info__server">
-              @{loaApiResponse.ArmoryProfile.ServerName}
-            </span>
-          </div>
           <div class="left">
-          <div class="testtest">
-  <div class="image-wrapper">
-    <img src={loaApiResponse.ArmoryProfile.CharacterImage} alt="Character Image" />
-  </div>
-  <div class="gray-background"></div>
-</div>
+            <div class="profile-character-info">
+              [Lv.{loaApiResponse.ArmoryProfile.CharacterLevel}{" "}
+              {loaApiResponse.ArmoryProfile.CharacterName}]{" "}
+              <span class="profile-character-info__server">
+                @{loaApiResponse.ArmoryProfile.ServerName}
+              </span>
+            </div>
+            <div class="testtest">
+              <div class="image-wrapper">
+                <img src={loaApiResponse.ArmoryProfile.CharacterImage} alt="Character Image" />
+              </div>
+              <div class="gray-background"></div>
+            </div>
             
             {/* <div class = "testtest">
               <img
