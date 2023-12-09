@@ -88,10 +88,6 @@ button:hover {
   resize: none;
 }
 
-.skilldbButtonGroup button {
-  background-color: #45a049;
-}
-
 button {
   padding: 12px 24px;
   border: none;
