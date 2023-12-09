@@ -54,7 +54,7 @@
             %>
         
             <script>
-                var a = "작성자: "+"<strong>"+"<%=data.id%>"+"</strong>"+"<br>    "+"<%=data.Contents%>";
+                var a = "<strong>"+"<%=data.id%>"+"</strong>"+"<br>    "+"<%=data.Contents%>";
                 if("<%=data.SkillName1%>"){
                     a = a.replace(new RegExp("<%=data.SkillName1%>", "g"), "<span class='test1'>" + "<%=data.SkillName1%>" + "</span>");
                     if("<%=data.SkillName2%>"){
@@ -118,7 +118,7 @@
         <!-- 내 직업 -->
             <div class = "my">
                 <form id="input" method="post" class="myJob">
-                    <span>내 직업</span>
+                    <span><strong>내 직업</strong></span>
                     <button type="submit" class = "me" name="me" value="리퍼" formaction="/postsearch">리퍼</button>
                     <button type="submit" class = "me" name="me" value="인파이터" formaction="/postsearch">인파이터</button>
                     <button type="submit" class = "me" name="me" value="워로드" formaction="/postsearch">워로드</button>
@@ -130,7 +130,7 @@
             <div class = "opp">
                 <form name="input" method="post">
                     <div class = "pongpong">
-                        <span>상대 직업</span>
+                        <span><strong>상대 직업</strong></span>
                         <button type="submit" class = "you" name="you" value="리퍼" formaction="/postsearch1">리퍼</button>
                         <button type="submit" class = "you" name="you" value="인파이터" formaction="/postsearch1">인파이터</button>
                         <button type="submit" class = "you" name="you" value="워로드" formaction="/postsearch1">워로드</button>
@@ -145,13 +145,13 @@
                 var meButtons = document.getElementsByClassName("me");
                 for (var i = 0; i < meButtons.length; i++) {
                     if (meButtons[i].value === "<%=postme%>") {
-                        meButtons[i].style.backgroundColor = "red";
+                        meButtons[i].style.backgroundColor = "#45a049";
                     }
                 }
                 var youButtons = document.getElementsByClassName("you");
                 for (var i = 0; i < youButtons.length; i++) {
                     if (youButtons[i].value === "<%=postyou%>") {
-                        youButtons[i].style.backgroundColor = "blue"
+                        youButtons[i].style.backgroundColor = "#45a049"
                     }
                 }
             </script>

@@ -199,7 +199,7 @@ app.get("/write", function (req, res, next) {
   const sql = "select SkillName,SkillThumb from skill where JobName = ? ";
   var param = jobname1;
   connection.query(sql, [param], function (err, rows) {
-    if (err) console.error;
+    if (err) console.error();
     res.render("write", {
       rows: rows,
       savecontents: savecontents,
@@ -228,7 +228,7 @@ app.get("/post", function (req, res) {
   let param = [postme, postyou];
 
   connection.query(sql, param, function (err, rows) {
-    if (err) console.error;
+    if (err) console.error();
 
     res.render("post", { rows, rows, postme: postme, postyou: postyou });
   });
@@ -275,7 +275,7 @@ app.get("/skilldb", function (req, res, next) {
     "select SkillName,SkillEx,SkillImg,SkillThumb from skill where JobName = ? ";
   var param = jobname;
   connection.query(sql, [param], function (err, rows) {
-    if (err) console.error;
+    if (err) console.error();
     res.render("skilldb", { rows: rows, postme: postme });
   });
 });

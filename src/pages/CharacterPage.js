@@ -23,7 +23,7 @@ const CharacterPage = () => {
 
     if (
       existingNoData &&
-      existingNoData.classList.contains("no-data-message")
+      existingNoData.classNameList.contains("no-data-message")
     ) {
       existingNoData.remove();
     }
@@ -70,7 +70,7 @@ const CharacterPage = () => {
       canvas.style.display = "none";
       canvas.insertAdjacentHTML(
         "afterend",
-        '<div class="no-data-message">전적이 없습니다</div>'
+        '<div className="no-data-message">전적이 없습니다</div>'
       );
     }
   };
@@ -81,7 +81,7 @@ const CharacterPage = () => {
 
     if (
       existingNoData &&
-      existingNoData.classList.contains("no-data-message")
+      existingNoData.classNameList.contains("no-data-message")
     ) {
       existingNoData.remove();
     }
@@ -117,7 +117,6 @@ const CharacterPage = () => {
         },
       };
 
-
       const ctx = canvas.getContext("2d");
       window.deathmatchChart = new Chart(ctx, {
         type: "doughnut",
@@ -125,12 +124,12 @@ const CharacterPage = () => {
         options: options,
       });
 
-      canvas.style.display = "block"; 
+      canvas.style.display = "block";
     } else {
       canvas.style.display = "none";
       canvas.insertAdjacentHTML(
         "afterend",
-        '<div class="no-data-message">전적이 없습니다</div>'
+        '<div className="no-data-message">전적이 없습니다</div>'
       );
     }
   };
@@ -141,7 +140,7 @@ const CharacterPage = () => {
 
     if (
       existingNoData &&
-      existingNoData.classList.contains("no-data-message")
+      existingNoData.classNameList.contains("no-data-message")
     ) {
       existingNoData.remove();
     }
@@ -153,10 +152,8 @@ const CharacterPage = () => {
     if (selectedSeason && selectedSeason.TeamElimination) {
       const eliminationData = selectedSeason.TeamElimination;
 
-
       const victoryRate =
         (eliminationData.VictoryCount / eliminationData.PlayCount) * 100;
-
 
       const data = {
         labels: ["Victory", "Loss"],
@@ -179,7 +176,6 @@ const CharacterPage = () => {
         },
       };
 
-
       const ctx = canvas.getContext("2d");
       window.myChart = new Chart(ctx, {
         type: "doughnut",
@@ -187,12 +183,12 @@ const CharacterPage = () => {
         options: options,
       });
 
-      canvas.style.display = "block"; 
+      canvas.style.display = "block";
     } else {
       canvas.style.display = "none";
       canvas.insertAdjacentHTML(
         "afterend",
-        '<div class="no-data-message">전적이 없습니다</div>'
+        '<div className="no-data-message">전적이 없습니다</div>'
       );
     }
   };
@@ -262,27 +258,29 @@ const CharacterPage = () => {
   // }
 
   return (
-    
-    <div class="lostark-pc lostark-profile">
-      <HeaderComponent/>
+    <div className="lostark-pc lostark-profile">
+      <HeaderComponent />
       {loaApiResponse ? (
-        <div class="profile-ingame">
-          <div class="left">
-            <div class="profile-character-info">
+        <div className="profile-ingame">
+          <div className="left">
+            <div className="profile-character-info">
               [Lv.{loaApiResponse.ArmoryProfile.CharacterLevel}{" "}
               {loaApiResponse.ArmoryProfile.CharacterName}]{" "}
-              <span class="profile-character-info__server">
+              <span className="profile-character-info__server">
                 @{loaApiResponse.ArmoryProfile.ServerName}
               </span>
             </div>
-            <div class="testtest">
-              <div class="image-wrapper">
-                <img src={loaApiResponse.ArmoryProfile.CharacterImage} alt="Character Image" />
+            <div className="testtest">
+              <div className="image-wrapper">
+                <img
+                  src={loaApiResponse.ArmoryProfile.CharacterImage}
+                  alt="Character Image"
+                />
               </div>
-              <div class="gray-background"></div>
+              <div className="gray-background"></div>
             </div>
-            
-            {/* <div class = "testtest">
+
+            {/* <div className = "testtest">
               <img
                 src={loaApiResponse.ArmoryProfile.CharacterImage}
                 alt="Character Image"
@@ -293,15 +291,15 @@ const CharacterPage = () => {
                 }}
               />
             </div> */}
-            <div class="level-info">
-              <div class="level-info__expedition">
+            <div className="level-info">
+              <div className="level-info__expedition">
                 <span>원정대 레벨</span>
                 <span>
                   <small>Lv.</small>
                   {loaApiResponse.ArmoryProfile.ExpeditionLevel}
                 </span>
               </div>
-              <div class="level-info__item">
+              <div className="level-info__item">
                 <span>전투 레벨</span>
                 <span>
                   <small>Lv.</small>
@@ -312,15 +310,15 @@ const CharacterPage = () => {
 
             <br></br>
 
-            <div class="level-info2">
-              <div class="level-info2__expedition">
+            <div className="level-info2">
+              <div className="level-info2__expedition">
                 <span>장착 아이템 레벨</span>
                 <span>
                   <small>Lv.</small>
                   {loaApiResponse.ArmoryProfile.ItemAvgLevel}
                 </span>
               </div>
-              <div class="level-info2__item">
+              <div className="level-info2__item">
                 <span>달성 아이템 레벨</span>
                 <span>
                   <small>Lv.</small>
@@ -329,28 +327,31 @@ const CharacterPage = () => {
               </div>
             </div>
 
-            <div class="game-info">
-              <div class="game-info__title">
+            <div className="game-info">
+              <div className="game-info__title">
                 <span>칭호</span>{" "}
                 <span>{loaApiResponse.ArmoryProfile.Title}</span>
               </div>
-              <div class="game-info__guild">
+              <div className="game-info__guild">
                 <span>길드</span>{" "}
                 <span>{loaApiResponse.ArmoryProfile.GuildName}</span>
               </div>
-              <div class="level-info__pvp">
+              <div className="level-info__pvp">
                 <span>PVP</span>{" "}
                 <span>{loaApiResponse.ArmoryProfile.PvpGradeName}</span>
               </div>
-              <div class="game-info__wisdom">
+              <div className="game-info__wisdom">
                 <span>영지</span>
-                <span><small>Lv.</small>{loaApiResponse.ArmoryProfile.TownLevel + " "}</span>
+                <span>
+                  <small>Lv.</small>
+                  {loaApiResponse.ArmoryProfile.TownLevel + " "}
+                </span>
                 <span>{loaApiResponse.ArmoryProfile.TownName}</span>
               </div>
             </div>
           </div>
 
-          <div class="right">
+          <div className="right">
             <div className="gray-box">
               <div className="box-section">
                 <p className="label">PvP 정보</p>
@@ -380,9 +381,13 @@ const CharacterPage = () => {
                       <div>
                         <div className="pvp-info">
                           {/* 경쟁전 */}
-                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>경쟁전</div>
+                          <div
+                            style={{ fontWeight: "bold", fontSize: "1.2em" }}
+                          >
+                            경쟁전
+                          </div>
                           <div className="battle-info">
-                            <div class="test-box">
+                            <div className="test-box">
                               {selectedSeason.Competitive &&
                               selectedSeason.Competitive.RankIcon ? (
                                 <img
@@ -411,13 +416,13 @@ const CharacterPage = () => {
                                   : "-"}
                               </div>
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 Kill 수:{" "}
                                 {selectedSeason.Competitive?.KillCount || "-"}
                               </div>
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 승리 게임{" "}
                                 {selectedSeason.Competitive?.VictoryCount ||
@@ -430,9 +435,13 @@ const CharacterPage = () => {
                             </div>
                           </div>
                           {/* 섬멸전 */}
-                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>섬멸전</div>
+                          <div
+                            style={{ fontWeight: "bold", fontSize: "1.2em" }}
+                          >
+                            섬멸전
+                          </div>
                           <div className="battle-info">
-                            <div class="test-box">
+                            <div className="test-box">
                               <canvas id="teamDeathmatchVictoryRateChart"></canvas>
                               <div
                                 style={{
@@ -471,14 +480,14 @@ const CharacterPage = () => {
                                 "섬멸전에 참가 기록이 없습니다."
                               )}
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 Kill 수 :{" "}
                                 {selectedSeason.TeamDeathmatch?.KillCount ||
                                   "-"}
                               </div>
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 에이스 달성 :{" "}
                                 {selectedSeason.TeamDeathmatch?.AceCount || "-"}
@@ -486,9 +495,13 @@ const CharacterPage = () => {
                             </div>
                           </div>
                           {/* 난투전 */}
-                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>난투전</div>
+                          <div
+                            style={{ fontWeight: "bold", fontSize: "1.2em" }}
+                          >
+                            난투전
+                          </div>
                           <div className="battle-info">
-                            <div class="test-box">
+                            <div className="test-box">
                               <div style={{ position: "relative" }}>
                                 <canvas id="deathmatchVictoryRateChart"></canvas>
                                 <div
@@ -525,13 +538,13 @@ const CharacterPage = () => {
                                 "난투전에 참가 기록이 없습니다."
                               )}
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 Kill 수 :{" "}
                                 {selectedSeason.Deathmatch?.KillCount || "-"}
                               </div>
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 에이스 달성 :{" "}
                                 {selectedSeason.Deathmatch?.AceCount || "-"}
@@ -548,9 +561,13 @@ const CharacterPage = () => {
                             </div>
                           </div>
                           {/* 대장전 */}
-                          <div style={{ fontWeight: 'bold', fontSize: '1.2em' }}>대장전</div>
+                          <div
+                            style={{ fontWeight: "bold", fontSize: "1.2em" }}
+                          >
+                            대장전
+                          </div>
                           <div className="battle-info">
-                            <div class="test-box">
+                            <div className="test-box">
                               <canvas id="victoryRateChart"></canvas>
                               <div
                                 style={{
@@ -589,14 +606,14 @@ const CharacterPage = () => {
                                 "대장전에 참가 기록이 없습니다."
                               )}
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 Kill 수 :{" "}
                                 {selectedSeason.TeamElimination?.KillCount ||
                                   "-"}
                               </div>
                             </div>
-                            <div class="test-box">
+                            <div className="test-box">
                               <div>
                                 킬뎃 :{" "}
                                 {(
@@ -623,14 +640,13 @@ const CharacterPage = () => {
                           </div>
                         </div>
                       </div>
-                      
                     ) : null}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <FooterComponent/>
+          <FooterComponent />
         </div>
       ) : (
         <div>안되는 이유를 찾아라 닝겐아..</div>

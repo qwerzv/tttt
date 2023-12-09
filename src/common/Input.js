@@ -11,7 +11,7 @@ const Input = () => {
 
   // 제출시 페이지 이동
   const handleSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     navigate(`/character/${characterName}`);
   };
 
