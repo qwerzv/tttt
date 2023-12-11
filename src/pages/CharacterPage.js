@@ -23,7 +23,7 @@ const CharacterPage = () => {
 
     if (
       existingNoData &&
-      existingNoData.classNameList.contains("no-data-message")
+      existingNoData.classList.contains("no-data-message")
     ) {
       existingNoData.remove();
     }
@@ -81,7 +81,7 @@ const CharacterPage = () => {
 
     if (
       existingNoData &&
-      existingNoData.classNameList.contains("no-data-message")
+      existingNoData.classList.contains("no-data-message")
     ) {
       existingNoData.remove();
     }
@@ -140,7 +140,7 @@ const CharacterPage = () => {
 
     if (
       existingNoData &&
-      existingNoData.classNameList.contains("no-data-message")
+      existingNoData.classList.contains("no-data-message")
     ) {
       existingNoData.remove();
     }
